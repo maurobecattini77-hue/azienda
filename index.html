@@ -3493,11 +3493,8 @@ class Component extends DCLogic {
       if (!p || p.tagName.toLowerCase() === "svg") continue;
       p.classList.add("zoomabile");
       p.classList.add("corsia");
-      if (!svg.getAttribute("data-zoom")) {
-        svg.setAttribute("data-zoom", "1");
-        svg.style.cursor = "zoom-in";
-        (function (s) { s.addEventListener("click", function () { apri(s); }); })(svg);
-      }
+      svg.setAttribute("data-zoom", "1");
+      svg.style.cursor = "zoom-in";
       var gia = p.querySelector(":scope > .lente");
       if (!gia) {
         var b = document.createElement("button");
@@ -3505,11 +3502,26 @@ class Component extends DCLogic {
         b.setAttribute("data-noprint", "1");
         b.setAttribute("aria-label", "Ingrandisci"); b.setAttribute("title", "Ingrandisci");
         b.innerHTML = PIU;
-        (function (s) { b.addEventListener("click", function (ev) { ev.stopPropagation(); apri(s); }); })(svg);
         p.appendChild(b);
       }
     }
   }
+
+  /* Un ascoltatore SOLO, sul documento: sopravvive a qualunque ridisegno della pagina
+     (i moduli costruiti con React rifanno il loro pezzo di DOM quando cambia una scheda). */
+  document.addEventListener("click", function (ev) {
+    var b = ev.target.closest ? ev.target.closest(".lente") : null;
+    if (b) {
+      var svg = b.parentElement && b.parentElement.querySelector("svg[viewBox]");
+      if (svg) { ev.preventDefault(); ev.stopPropagation(); apri(svg); }
+      return;
+    }
+    var s = ev.target.closest ? ev.target.closest("svg[viewBox]") : null;
+    if (!s || s.closest("#velografica")) return;
+    if (s.getAttribute("data-lente") === "no") return;
+    var vb = (s.getAttribute("viewBox") || "").split(/[ ,]+/);
+    if (parseFloat(vb[2] || "0") >= 600) apri(s);
+  }, true);
 
   function avvia() {
     attacca();
