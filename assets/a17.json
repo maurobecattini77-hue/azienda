@@ -1,0 +1,320 @@
+{
+  "titolo": "Strumenti di pagamento",
+  "materia": "Economia aziendale",
+  "sogliaSufficienza": 60,
+  "shuffle": true,
+  "domande": [
+    {
+      "id": "q1",
+      "type": "single",
+      "points": 1,
+      "question": "Nel sistema bancario, a cosa servono le prime due lettere e i due numeri iniziali del codice IBAN (ad esempio 'IT 05')?",
+      "options": [
+        "Identificano la Nazione del conto e fungono da codici di controllo automatico per evitare errori di battitura.",
+        "Indicano la filiale fisica territoriale in cui è stato materialmente aperto il rapporto bancario del cliente.",
+        "Rappresentano il codice tributo per l'applicazione delle tasse annuali sui trasferimenti internazionali.",
+        "Segnalano in modo inequivocabile che si tratta di un conto corrente dedicato esclusivamente ad uso aziendale."
+      ],
+      "correctIndex": 0,
+      "explanation": "La sigla iniziale identifica il Paese in cui risiede il conto, mentre i due numeri immediatamente successivi sono codici di controllo (Check Digit) che i sistemi bancari utilizzano per accertarsi che l'IBAN non presenti errori di trascrizione."
+    },
+    {
+      "id": "q2",
+      "type": "single",
+      "points": 1,
+      "question": "Qual è una delle differenze tecniche fondamentali che distingue il Bonifico Istantaneo da quello Ordinario?",
+      "options": [
+        "L'operazione è definitiva e non può essere in alcun modo revocata una volta che è stato confermato l'invio.",
+        "Permette di trasferire fondi esclusivamente tra conti correnti appartenenti alla medesima filiale bancaria.",
+        "Comporta sempre l'applicazione di una commissione fissa pari al 5% dell'importo totale trasferito.",
+        "Può essere eseguito solamente nei giorni lavorativi e durante i normali orari di apertura degli sportelli."
+      ],
+      "correctIndex": 0,
+      "explanation": "Il bonifico istantaneo ha il grande vantaggio dell'incasso immediato ma, a differenza di quello ordinario, è totalmente irrevocabile: non si può annullare o bloccare in nessun caso una volta partito."
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "points": 1,
+      "question": "Come viene gestito temporalmente l'addebito delle spese quando si utilizza una Carta di Debito (Bancomat) per un acquisto tramite POS?",
+      "options": [
+        "La banca verifica la disponibilità sul conto e scala la cifra in modo istantaneo.",
+        "Le spese vengono raggruppate e addebitate in un'unica soluzione a metà del mese successivo.",
+        "L'importo viene bloccato, ma l'addebito reale avviene solo dopo 48 ore lavorative.",
+        "I fondi vengono scalati solo al momento del rinnovo annuale del plafond fiduciario."
+      ],
+      "correctIndex": 0,
+      "explanation": "La Carta di Debito si basa sulla logica del 'paga ora': è collegata a filo diretto al conto corrente. Se il saldo contabile è sufficiente, l'acquisto viene autorizzato dal POS e la cifra viene materialmente scalata all'istante dalle disponibilità liquide."
+    },
+    {
+      "id": "q4",
+      "type": "single",
+      "points": 1,
+      "question": "Cosa rappresenta realmente il 'Plafond' di una Carta di Credito?",
+      "options": [
+        "Il tetto massimo di spesa che la banca è disposta ad anticipare, non la reale disponibilità economica del cliente.",
+        "Il costo annuale di gestione che l'istituto di credito addebita per il mantenimento dei servizi accessori della carta.",
+        "Il limite minimo mensile che l'utente deve obbligatoriamente spendere per non incorrere nel blocco del contratto.",
+        "L'esatto ammontare dei risparmi attualmente depositati sul conto corrente del titolare in quel dato momento."
+      ],
+      "correctIndex": 0,
+      "explanation": "Il Plafond non è in alcun modo indicativo del budget personale o dei risparmi privati, ma rappresenta unicamente l'importo massimo fiduciario che la banca è disposta a prestare o anticipare nel corso del mese."
+    },
+    {
+      "id": "q5",
+      "type": "single",
+      "points": 1,
+      "question": "Per quale motivo pratico la Carta Prepagata è considerata lo strumento più sicuro per effettuare acquisti su siti web poco conosciuti?",
+      "options": [
+        "In caso di clonazione o furto dati, i truffatori hanno accesso solo all'importo pre-caricato sulla carta e non ai risparmi del conto.",
+        "Le operazioni effettuate tramite prepagate non possono mai essere clonate grazie all'assenza del codice di sicurezza CVV.",
+        "Tutte le transazioni online con prepagata sono automaticamente assicurate e rimborsate dallo Stato fino a un massimo di 10.000 euro.",
+        "L'acquisto online con prepagata richiede sempre l'invio preventivo di una notifica firmata digitalmente alla propria filiale."
+      ],
+      "correctIndex": 0,
+      "explanation": "La carta prepagata si basa sulla logica del 'paga prima' e nasce vuota. Se un portale dovesse intercettare i dati della tessera, i truffatori avrebbero accesso unicamente alla singola cifra ricaricata in precedenza, lasciando intatti i veri risparmi bancari."
+    },
+    {
+      "id": "q6",
+      "type": "single",
+      "points": 1,
+      "question": "Qual è la verità tecnica riguardo al diffuso termine 'Bancomat'?",
+      "options": [
+        "Non è una tipologia di carta a sé stante, ma rappresenta il nome del circuito di pagamento di rete nazionale (PagoBANCOMAT).",
+        "È l'unica tipologia di carta autorizzata in via esclusiva per effettuare e ricevere bonifici internazionali in valuta estera.",
+        "Rappresenta una speciale carta di credito ricaricabile riservata in via prioritaria agli acquisti nei piccoli negozi fisici.",
+        "È il terminale elettronico obbligatorio (comunemente detto POS) che ogni esercente commerciale deve possedere."
+      ],
+      "correctIndex": 0,
+      "explanation": "PagoBANCOMAT è semplicemente il nome del circuito di rete italiano su cui transita il pagamento elettronico per richiedere l'autorizzazione, non l'oggetto fisico di plastica né una tipologia di carta indipendente dalla famiglia delle carte di debito."
+    },
+    {
+      "id": "q7",
+      "type": "single",
+      "points": 1,
+      "question": "Come viene garantita la sicurezza dei dati quando si utilizza uno smartphone per pagare tramite il Wallet Digitale (es. Apple Pay o Google Pay) nei negozi fisici?",
+      "options": [
+        "Il sistema crea un codice virtuale temporaneo (Token) al posto dei dati reali, che non vengono mai mostrati o inviati al lettore POS.",
+        "Il telefono si collega direttamente alla sede centrale della banca tramite un SMS crittografato ad altissima sicurezza.",
+        "È richiesto l'inserimento obbligatorio del codice IBAN sulla tastiera del POS prima di avvicinare materialmente lo smartphone.",
+        "Il Wallet digitale funziona esclusivamente per importi inferiori ai 50 euro, azzerando di fatto qualsiasi rischio di frode telematica."
+      ],
+      "correctIndex": 0,
+      "explanation": "Grazie alla tecnologia di Tokenizzazione, il numero reale della carta non viene mai memorizzato sul telefono né tantomeno inviato al lettore del negozio. Il sistema usa un codice sostitutivo e univoco che rende impossibile ai malintenzionati clonare o fotografare i dati."
+    },
+    {
+      "id": "q8",
+      "type": "single",
+      "points": 1,
+      "question": "Qual è una delle principali caratteristiche funzionali del sistema pagoPA utilizzato per versare le quote alla Pubblica Amministrazione (come le tasse scolastiche o le multe)?",
+      "options": [
+        "Utilizza un Avviso di Pagamento contenente un codice identificativo unico (IUV) o un QR Code che previene qualsiasi errore di importo o destinatario.",
+        "Permette di rateizzare in automatico qualsiasi debito verso lo Stato in dodici mesi senza l'applicazione di interessi di mora.",
+        "Obbliga i cittadini a recarsi esclusivamente presso gli sportelli postali, abolendo di fatto i moderni pagamenti telematici.",
+        "È un'applicazione da scaricare sul telefono che preleva in automatico le tasse mensili direttamente dalla busta paga dei lavoratori."
+      ],
+      "correctIndex": 0,
+      "explanation": "pagoPA non è un'app, ma una piattaforma istituzionale che, attraverso il riconoscimento univoco dell'Avviso di Pagamento (tramite IUV o inquadrando il QR Code), assicura che il denaro arrivi all'ente corretto istantaneamente, eliminando il rischio di sbagliare le cifre da versare."
+    },
+    {
+      "id": "q9",
+      "type": "multi",
+      "points": 1.2,
+      "question": "Sebbene il denaro contante sia immediato e non richieda tecnologia, presenta degli svantaggi significativi. Quali sono le sue principali criticità? (Seleziona 2 risposte)",
+      "options": [
+        "È costantemente ed esplicitamente esposto al rischio di furto o smarrimento accidentale.",
+        "Non offre alcuna tutela legale o prova oggettiva in caso di eventuali contestazioni di natura commerciale.",
+        "L'incasso richiede obbligatoriamente alle attività l'impiego di dispositivi hardware molto costosi.",
+        "Le banche applicano commissioni percentuali altissime e fisse per ogni versamento e deposito di banconote.",
+        "Viene rifiutato per legge in Italia per la stragrande maggioranza degli acquisti di importo inferiore ai 10 euro."
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "explanation": "Tra le debolezze del contante figurano l'inevitabile esposizione al rischio di smarrimento o furto fisico, e l'assoluta mancanza di tracciabilità, che azzera ogni possibilità di dimostrare l'avvenuto pagamento in caso di contenzioso."
+    },
+    {
+      "id": "q10",
+      "type": "multi",
+      "points": 1.2,
+      "question": "Durante la compilazione di un bonifico bancario ordinario, quali dati sono strettamente obbligatori per completare l'operazione in modo corretto? (Seleziona 2 risposte)",
+      "options": [
+        "Il codice IBAN completo a 27 caratteri corrispondente al conto del beneficiario.",
+        "La Causale, ovvero una motivazione chiara ed esplicita che giustifichi il trasferimento.",
+        "La Partita IVA o il numero di registro imprese nel caso in cui il destinatario sia un'azienda.",
+        "Il codice fiscale anagrafico del soggetto che sta ordinando materialmente il pagamento.",
+        "Il massimale di spesa residuo disponibile sulla propria carta di debito personale."
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "explanation": "I dati essenziali per inoltrare e processare la richiesta di trasferimento fondi sono: l'intestatario corretto, l'IBAN completo, l'importo esatto da inviare e una causale testuale esplicativa."
+    },
+    {
+      "id": "q11",
+      "type": "multi",
+      "points": 1.2,
+      "question": "Quali sono le regole di sicurezza attualmente previste per la funzione Contactless delle carte di pagamento fisiche? (Seleziona 2 risposte)",
+      "options": [
+        "Le transazioni inferiori a 50 euro vengono generalmente autorizzate dal POS senza la digitazione del PIN.",
+        "Raggiunti i 150 euro cumulativi di spesa senza aver inserito il codice, il sistema richiede obbligatoriamente il PIN per sbloccarsi.",
+        "La modalità contactless si disattiva in via precauzionale e automatica se utilizzata in ore notturne o nei giorni festivi.",
+        "Per ogni acquisto effettuato senza l'inserimento della carta nel POS è obbligatorio firmare fisicamente lo scontrino emesso.",
+        "La funzionalità dell'antenna si blocca definitivamente se la tessera viene avvicinata due volte consecutive allo stesso lettore."
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "explanation": "Le normative sulla sicurezza permettono la fluidità dei piccoli acquisti rimuovendo il PIN sotto una certa soglia. Tuttavia, per tutelare i clienti dallo smarrimento, scatta un blocco che impone la verifica al raggiungimento di un tetto di spesa cumulativa senza PIN."
+    },
+    {
+      "id": "q12",
+      "type": "multi",
+      "points": 1.2,
+      "question": "Assegni Bancari e Circolari presentano logiche e garanzie profondamente diverse. Quali di queste affermazioni risultano corrette? (Seleziona 2 risposte)",
+      "options": [
+        "L'assegno bancario espone al rischio di scoperto, in quanto la disponibilità dei fondi sul conto di chi lo emette non è garantita a priori.",
+        "L'assegno circolare viene materialmente emesso dalla banca o dalle poste, assicurando la totale e preventiva copertura dell'importo.",
+        "L'assegno bancario è protetto da un fondo statale che rimborsa sempre e comunque il beneficiario in caso di frode.",
+        "L'assegno circolare richiede obbligatoriamente un garante privato presente fisicamente allo sportello bancario.",
+        "Entrambi gli strumenti cartacei sono considerati ormai illegali per qualsiasi transazione di importo superiore ai cinquecento euro."
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "explanation": "L'assegno bancario lo si stacca in autonomia dal libretto, esponendo chi lo riceve al rischio di scoperto se non ci sono fondi sufficienti. Il circolare, al contrario, viene emesso direttamente dalla banca che pre-congela i fondi, offrendo garanzia di incasso totale."
+    },
+    {
+      "id": "q13",
+      "type": "matching",
+      "points": 1.3,
+      "question": "Collega le definizioni normative e le porzioni del codice IBAN al termine corretto.",
+      "pairs": [
+        {
+          "item": "Evasione Fiscale",
+          "match": "Incassare pagamenti 'in nero' ed escludere i profitti dalla dichiarazione dei redditi."
+        },
+        {
+          "item": "Riciclaggio",
+          "match": "Immettere capitali di provenienza illecita o criminale all'interno dell'economia legale."
+        },
+        {
+          "item": "Codice ABI",
+          "match": "Sequenza di 5 cifre che identifica l'istituto bancario su scala nazionale (es. Unicredit)."
+        },
+        {
+          "item": "Codice CAB",
+          "match": "Sequenza di 5 cifre che identifica la singola filiale o agenzia territoriale."
+        }
+      ],
+      "explanation": "L'evasione nasconde redditi al fisco, il riciclaggio tenta di ripulire capitali sporchi nell'economia lecita. Relativamente all'IBAN, l'ABI identifica a livello nazionale il nome della banca, mentre il CAB circoscrive la singola agenzia in cui è incardinato il conto."
+    },
+    {
+      "id": "q14",
+      "type": "matching",
+      "points": 1.3,
+      "question": "Associa le diverse tipologie di carte al loro specifico principio tecnico di funzionamento e di addebito finanziario.",
+      "pairs": [
+        {
+          "item": "Carta di Debito",
+          "match": "Logica del 'Paga ora': la spesa viene decurtata in tempo reale dalle disponibilità del conto."
+        },
+        {
+          "item": "Carta di Credito",
+          "match": "Logica del 'Paga dopo': la banca anticipa i soldi dal plafond e provvede a un addebito in differita."
+        },
+        {
+          "item": "Carta Prepagata",
+          "match": "Logica del 'Paga prima': necessita obbligatoriamente del versamento preventivo di fondi."
+        },
+        {
+          "item": "Carta-conto (es. Revolut)",
+          "match": "Strumento ricaricabile dotato in modo anomalo di un IBAN personale per la ricezione autonoma di accrediti o stipendi."
+        }
+      ],
+      "explanation": "La carta di debito attinge subito dai fondi. La credito sfrutta il plafond per l'addebito differito. La prepagata deve prima essere alimentata. Infine, la Carta-conto garantisce a una tessera ricaricabile standard alcune funzioni tipiche del conto corrente tramite l'IBAN stampato."
+    },
+    {
+      "id": "q15",
+      "type": "matching",
+      "points": 1.3,
+      "question": "Collega il corretto scenario pratico allo strumento di spesa più intelligente, idoneo e sicuro da utilizzare.",
+      "pairs": [
+        {
+          "item": "Acquisti quotidiani ripetitivi (pane, carburante, piccole spese).",
+          "match": "Carta di Debito (garantisce assoluta trasparenza e costante controllo del budget)"
+        },
+        {
+          "item": "Noleggio auto con richiesta di pre-autorizzazione a titolo di cauzione.",
+          "match": "Carta di Credito (blocca i fondi sul plafond bancario mantenendo intatti i risparmi liquidi del cliente)"
+        },
+        {
+          "item": "Acquisto occasionale su un portale di abbigliamento dubbio.",
+          "match": "Carta Prepagata (circoscrive i danni in caso di clonazione ai soli fondi pre-caricati)"
+        },
+        {
+          "item": "Versamento della caparra confirmatoria dal notaio per una casa.",
+          "match": "Assegno Circolare (garantisce al venditore la contestualità materiale del pagamento e l'assoluta copertura dei fondi)"
+        }
+      ],
+      "explanation": "La gestione finanziaria sana prevede un piano per le uscite: la garanzia del credito per i noleggi, la concretezza immediata del debito per la spesa giornaliera, la sicurezza della prepagata per gli acquisti web e l'affidabilità del circolare per gli acquisti immobiliari."
+    },
+    {
+      "id": "q16",
+      "type": "matching",
+      "points": 1.3,
+      "question": "Collega ogni tecnologia o codice dei pagamenti digitali alla sua definizione corretta.",
+      "pairs": [
+        {
+          "item": "Tokenizzazione",
+          "match": "Codice sostitutivo che evita di inviare il numero reale della carta al lettore POS."
+        },
+        {
+          "item": "Tecnologia NFC",
+          "match": "Permette a smartphone e POS di 'dialogare' a distanza di pochissimi centimetri."
+        },
+        {
+          "item": "Funzione Contactless",
+          "match": "Pagamento avvicinando la carta al lettore, senza inserirla fisicamente nel POS."
+        },
+        {
+          "item": "Codice IUV",
+          "match": "Identificativo unico di 18 cifre presente sull'Avviso di Pagamento del sistema pagoPA."
+        }
+      ],
+      "explanation": "La tokenizzazione protegge i dati sostituendo il numero reale della carta con un token usa-e-getta; l'NFC è la tecnologia di prossimità che fa comunicare telefono e POS; il contactless è il pagamento per semplice avvicinamento della tessera; lo IUV è il codice univoco che identifica un singolo Avviso di Pagamento pagoPA."
+    },
+    {
+      "id": "q17",
+      "type": "open",
+      "points": 3,
+      "maxLength": 400,
+      "question": "Spiega perché lo Stato ha fissato un limite all'uso del denaro contante nei pagamenti tra soggetti diversi (attualmente 5.000 euro), quali fenomeni intende contrastare e perché questo limite NON si applica ai prelievi e ai versamenti sul proprio conto corrente."
+    },
+    {
+      "id": "q18",
+      "type": "open",
+      "points": 3,
+      "maxLength": 400,
+      "question": "Confronta il bonifico ordinario e il bonifico istantaneo evidenziando le differenze in termini di tempi di accredito, disponibilità del servizio, revocabilità e costi. Spiega inoltre perché per un'attività commerciale il bonifico istantaneo è un grande vantaggio, ma richiede particolare attenzione."
+    },
+    {
+      "id": "q19",
+      "type": "open",
+      "points": 3,
+      "maxLength": 400,
+      "question": "Spiega perché, per il pagamento di una casa davanti al notaio, l'assegno circolare è preferito sia al bonifico sia all'assegno bancario. Nel rispondere chiarisci il concetto di 'contestualità' e la differenza di copertura tra assegno bancario e assegno circolare."
+    },
+    {
+      "id": "q20",
+      "type": "open",
+      "points": 3,
+      "maxLength": 400,
+      "question": "Spiega come funziona il sistema del 'budget' dell'app Satispay e chiarisci la differenza di costi tra i pagamenti scambiati tra privati e i pagamenti effettuati a un negoziante (secondo l'aggiornamento 2026)."
+    }
+  ]
+}
