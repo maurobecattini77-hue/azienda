@@ -5,6 +5,71 @@
 
 
 <script src="assets/a19.js"></script>
+
+
+
+
+
+<style>
+/* ============ RIFINITURE 25/07 ============ */
+/* la lentina nuova deve vincere anche sui moduli che hanno un <style> nel body */
+.zoomabile > .lente{
+  width:44px !important; height:44px !important; border-radius:50% !important;
+  top:10px !important; right:10px !important;
+  background:rgba(255,255,255,.94) !important; border:1px solid #D9DACF !important;
+}
+.zoomabile > .lente svg{ width:22px !important; height:22px !important; }
+@media (hover:hover) and (pointer:fine){
+  .zoomabile > .lente{ opacity:0 !important; pointer-events:none !important; }
+  .zoomabile:hover > .lente, .zoomabile:focus-within > .lente{
+    opacity:1 !important; pointer-events:auto !important; }
+}
+@media (hover:none){
+  .zoomabile > .lente{ opacity:1 !important; width:38px !important; height:38px !important;
+    top:8px !important; right:8px !important; }
+  .zoomabile > .lente svg{ width:20px !important; height:20px !important; }
+}
+/* il guscio che avvolge la singola foto, quando il contenitore non si presta */
+.zoom-foto{ position:relative; display:block; line-height:0; }
+/* i moduli senza classi: l'etichetta sta su section E su div */
+
+
+
+}
+</style>
+
+
+
+
+
+<style>
+/* ============ STATO SICURO 25/07 (azienda, imprenditore) ============
+   Qui la colonna 880 non c'e': va fatta reimpaginando le card, non a colpi di CSS.
+   Resta tutto il resto, che e' collaudato. */
+#velofoto, #velografica{ background:#262420 !important; }
+#velofoto img{ border-radius:8px; }
+.zoomabile{ position:relative; }
+.zoom-foto{ position:relative; display:block; line-height:0; }
+.zoomabile > .lente{
+  position:absolute; top:10px; right:10px; width:44px !important; height:44px !important;
+  border-radius:50% !important; border:1px solid #D9DACF !important;
+  background:rgba(255,255,255,.94) !important; color:#57534a;
+  display:flex; align-items:center; justify-content:center; cursor:zoom-in; padding:0; z-index:3;
+  transition:opacity .16s ease, transform .16s ease;
+}
+.zoomabile > .lente svg{ width:22px !important; height:22px !important; display:block; }
+.zoomabile > .lente:hover{ background:#fff !important; transform:scale(1.06); }
+@media (hover:hover) and (pointer:fine){
+  .zoomabile > .lente{ opacity:0 !important; pointer-events:none !important; }
+  .zoomabile:hover > .lente, .zoomabile:focus-within > .lente{
+    opacity:1 !important; pointer-events:auto !important; }
+}
+@media (hover:none){
+  .zoomabile > .lente{ opacity:1 !important; width:38px !important; height:38px !important; }
+  .zoomabile > .lente svg{ width:20px !important; height:20px !important; }
+}
+@media print{ .zoomabile > .lente{ display:none !important; } }
+</style>
 </head>
 <body>
 <x-dc>
@@ -520,7 +585,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
       <section data-screen-label="Card 01" style="background:#F8F8F3;border:1px solid #D9DACF;border-radius:22px;overflow:hidden;margin-bottom:30px;">
         <div style="padding:16px 16px 0;">
           <div style="position:relative;border-radius:8px;overflow:hidden;border:1px solid #D9DACF;">
-            <img src="assets/a15.png" alt="Una pasticcera dietro il bancone con un vassoio di croissant" style="display:block;width:100%;height:auto;">
+            <img loading="lazy" decoding="async" src="assets/a15.png" alt="Una pasticcera dietro il bancone con un vassoio di croissant" style="display:block;width:100%;height:auto;">
             <div style="position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(to top, rgba(38,36,32,.62), transparent);"></div>
           </div>
         </div>
@@ -584,7 +649,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
         <p style="font-size:19px;line-height:1.74;margin:0 0 18px;">Ognuno ha compiti e responsabilità precise. In una pasticceria, ad esempio, il pasticcere capo organizza la produzione, gli aiuti preparano e cuociono, l'addetto al banco serve i clienti e incassa, chi si occupa degli acquisti ordina la farina, il burro e il cioccolato. Sono ruoli diversi, ma legati: se manca anche solo uno di questi pezzi, la mattina dopo qualcosa non funziona.</p>
         <p style="font-size:19px;line-height:1.74;margin:0;">Tutte queste persone, in cambio del proprio lavoro, ricevono una <strong style="background:linear-gradient(transparent 64%, rgba(235,200,113,.62) 64%);">retribuzione</strong>, cioè un compenso in denaro: uno stipendio mensile oppure una paga calcolata sulle ore lavorate. La retribuzione è il modo in cui l'azienda riconosce e ripaga il contributo di chi lavora.</p>
         </div>
-          <img data-noprint="1" src="assets/a13.jpg" alt="Persone al lavoro insieme, ciascuna con un proprio compito" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
+          <img loading="lazy" decoding="async" data-noprint="1" src="assets/a13.jpg" alt="Persone al lavoro insieme, ciascuna con un proprio compito" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
         </div>
       
 <div data-noprint="1" style="margin:24px 0 6px;"><svg viewBox="0 0 1020 318" role="img" aria-label="Confronto tra l'imprenditore e i collaboratori" style="display:block;width:100%;height:auto;"><rect x="0" y="8" width="497" height="302" rx="18" fill="#fff" stroke="#D9DACF" stroke-width="1.5"/><path d="M18 11 h461" stroke="#AC6144" stroke-width="5" stroke-linecap="round"/><text x="26" y="44" font-family="'Schibsted Grotesk', sans-serif" font-size="13" font-weight="700" fill="#8a4a30" text-anchor="start">CHI DECIDE E RISCHIA</text><svg x="26" y="55.36" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20"><g fill="none" stroke="#AC6144" stroke-linecap="round"><circle cx="9.5" cy="5.5" r="3"/><path d="M15 16.5v-2c0-3.098-2.495-6-5.5-6S4 11.402 4 14.5v2"/></g></svg><text x="80" y="84" font-family="Fraunces, serif" font-size="24" font-weight="600" fill="#262420" text-anchor="start">L'imprenditore.</text><text x="26" y="126" font-family="'Schibsted Grotesk', sans-serif" font-size="17" font-weight="400" fill="#4b473e" text-anchor="start">È chi avvia l'attività, prende le decisioni più importanti e</text><text x="26" y="152" font-family="'Schibsted Grotesk', sans-serif" font-size="17" font-weight="400" fill="#4b473e" text-anchor="start">si assume i rischi di ciò che decide.</text><circle cx="30" cy="177" r="4.2" fill="#AC6144"/><text x="44" y="182" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="500" fill="#262420" text-anchor="start">sceglie che cosa produrre e come</text><circle cx="30" cy="207" r="4.2" fill="#AC6144"/><text x="44" y="212" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="500" fill="#262420" text-anchor="start">mette il capitale e risponde degli esiti</text><circle cx="30" cy="237" r="4.2" fill="#AC6144"/><text x="44" y="242" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="500" fill="#262420" text-anchor="start">guadagna se l'impresa va bene</text><rect x="523" y="8" width="497" height="302" rx="18" fill="#fff" stroke="#D9DACF" stroke-width="1.5"/><path d="M541 11 h461" stroke="#5C8B73" stroke-width="5" stroke-linecap="round"/><text x="549" y="44" font-family="'Schibsted Grotesk', sans-serif" font-size="13" font-weight="700" fill="#3f6b52" text-anchor="start">CHI LAVORA CON LUI</text><svg x="549" y="55.36" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20"><g fill="#5C8B73" fill-rule="evenodd" clip-rule="evenodd"><path d="M5 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6"/><path d="M3.854 8.896a.5.5 0 0 1 0 .708l-.338.337A3.47 3.47 0 0 0 2.5 12.394v1.856a.5.5 0 1 1-1 0v-1.856a4.47 4.47 0 0 1 1.309-3.16l.337-.338a.5.5 0 0 1 .708 0m11.792-.3a.5.5 0 0 0 0 .708l.338.337A3.47 3.47 0 0 1 17 12.094v2.156a.5.5 0 0 0 1 0v-2.156a4.47 4.47 0 0 0-1.309-3.16l-.337-.338a.5.5 0 0 0-.708 0"/><path d="M14 9a2 2 0 1 1 0-4a2 2 0 0 1 0 4m0 1a3 3 0 1 1 0-6a3 3 0 0 1 0 6m-4.5 3.25a2.5 2.5 0 0 0-2.5 2.5v1.3a.5.5 0 0 1-1 0v-1.3a3.5 3.5 0 0 1 7 0v1.3a.5.5 0 1 1-1 0v-1.3a2.5 2.5 0 0 0-2.5-2.5"/><path d="M9.5 11.75a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6"/></g></svg><text x="603" y="84" font-family="Fraunces, serif" font-size="24" font-weight="600" fill="#262420" text-anchor="start">I collaboratori.</text><text x="549" y="126" font-family="'Schibsted Grotesk', sans-serif" font-size="17" font-weight="400" fill="#4b473e" text-anchor="start">Sono tutti coloro che lavorano nell'azienda, ciascuno</text><text x="549" y="152" font-family="'Schibsted Grotesk', sans-serif" font-size="17" font-weight="400" fill="#4b473e" text-anchor="start">con compiti e responsabilità precise, in cambio di una</text><text x="549" y="178" font-family="'Schibsted Grotesk', sans-serif" font-size="17" font-weight="400" fill="#4b473e" text-anchor="start">retribuzione.</text><circle cx="553" cy="203" r="4.2" fill="#5C8B73"/><text x="567" y="208" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="500" fill="#262420" text-anchor="start">dipendenti e apprendisti</text><circle cx="553" cy="233" r="4.2" fill="#5C8B73"/><text x="567" y="238" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="500" fill="#262420" text-anchor="start">lavoratori stagionali</text><circle cx="553" cy="263" r="4.2" fill="#5C8B73"/><text x="567" y="268" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="500" fill="#262420" text-anchor="start">consulenti esterni</text></svg></div>
@@ -622,7 +687,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
 
         <p style="font-size:19px;line-height:1.74;margin:0;">Capire questa differenza è importante: un forno si compra una volta ogni molti anni, la farina si compra ogni settimana. Sono due tipi di spesa molto diversi, e l'azienda li deve gestire in modo diverso.</p>
         <div data-noprint="1" style="margin:26px 0 0;">
-          <img src="assets/a14.jpg" alt="Impianti e macchinari di produzione: beni strumentali che durano nel tempo" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
+          <img loading="lazy" decoding="async" src="assets/a14.jpg" alt="Impianti e macchinari di produzione: beni strumentali che durano nel tempo" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
         </div>
       </section>
 
@@ -657,7 +722,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
         <p style="font-size:19px;line-height:1.74;margin:0;">E qui sta il punto decisivo: l'azienda riesce a soddisfare i bisogni di tante persone diverse, tutte allo stesso tempo. Il <strong>cliente</strong> soddisfa il bisogno di un buon prodotto; chi <strong>lavora</strong> soddisfa il bisogno di un reddito stabile; l'<strong>imprenditore</strong> soddisfa il bisogno di un guadagno che ripaghi il suo impegno e i suoi rischi. Quando il cliente trova ogni mattina la brioche fresca e ben servita, torna il giorno dopo: e quei nuovi acquisti danno all'azienda la <strong>continuità</strong> per andare avanti. Creare valore, in fondo, è la condizione perché l'azienda possa continuare a esistere.</p>
 
         </div>
-          <img data-noprint="1" src="assets/a05.jpg" alt="Pasticcini decorati con frutta fresca: il valore creato che soddisfa i bisogni" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
+          <img loading="lazy" decoding="async" data-noprint="1" src="assets/a05.jpg" alt="Pasticcini decorati con frutta fresca: il valore creato che soddisfa i bisogni" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
         </div>
       
 <div data-noprint="1" style="margin:24px 0 6px;"><svg viewBox="0 0 1020 394" role="img" aria-label="La creazione del valore: dalle materie prime al prodotto finito" style="display:block;width:100%;height:auto;"><defs><marker id="pen" viewBox="0 0 10 9" refX="9.2" refY="4.5" markerWidth="7.2" markerHeight="6.5" orient="auto"><path d="M0.5,0.6 C4,2.7 6.6,3.9 9.4,4.5 C6.6,5.1 4,6.3 0.5,8.4 C1.9,6.3 1.9,2.7 0.5,0.6 Z" fill="#57534a"/></marker></defs><rect x="0" y="174" width="320" height="176" rx="14" fill="#faf4e2" stroke="#BB963C" stroke-width="1.6"/><svg x="140" y="194" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20"><g fill="#BB963C"><path d="M3.712 2.5H2.5a.5.5 0 0 1 0-1h1.603a.5.5 0 0 1 .485.379l1.897 7.6a.5.5 0 0 1-.97.242z"/><path fill-rule="evenodd" d="M15.495 7.5h-7.99q-.226 0-.447.05A2.02 2.02 0 0 0 5.55 9.969l.783 3.461A2.01 2.01 0 0 0 8.29 15h6.422a2.01 2.01 0 0 0 1.956-1.57l.783-3.462q.05-.221.05-.449A2.01 2.01 0 0 0 15.496 7.5M7.283 8.525a1 1 0 0 1 .223-.025h7.989a1.013 1.013 0 0 1 .98 1.247l-.784 3.462a1.01 1.01 0 0 1-.98.791H8.29c-.468 0-.875-.328-.98-.791l-.783-3.462a1.02 1.02 0 0 1 .757-1.222" clip-rule="evenodd"/><path d="M17 16.75a1.75 1.75 0 1 1-3.5 0a1.75 1.75 0 0 1 3.5 0m-7 0a1.75 1.75 0 1 1-3.5 0a1.75 1.75 0 0 1 3.5 0"/></g></svg><text x="160" y="266" font-family="Fraunces, serif" font-size="21" font-weight="600" fill="#262420" text-anchor="middle">Le materie prime.</text><text x="160" y="289" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="400" fill="#4b473e" text-anchor="middle">farina, uova, zucchero: costano poco</text><text x="160" y="312" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="400" fill="#4b473e" text-anchor="middle">e da sole non servono a nulla</text><path d="M324 316 L344 316" fill="none" stroke="#57534a" stroke-width="2" stroke-linecap="round" marker-end="url(#pen)"/><rect x="350" y="118" width="320" height="232" rx="14" fill="#fbf1e7" stroke="#C07F49" stroke-width="1.6"/><svg x="490" y="138" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20"><g fill="#C07F49" fill-rule="evenodd" clip-rule="evenodd"><path d="M8.232 11.768A2.5 2.5 0 0 0 10 12.5c.672 0 1.302-.267 1.768-.732A2.5 2.5 0 0 0 12.5 10c0-.672-.267-1.302-.732-1.768A2.5 2.5 0 0 0 10 7.5c-.672 0-1.302.267-1.768.732A2.5 2.5 0 0 0 7.5 10c0 .672.267 1.302.732 1.768m2.829-.707c-.28.28-.657.439-1.061.439s-.78-.16-1.06-.44s-.44-.656-.44-1.06s.16-.78.44-1.06s.656-.44 1.06-.44s.78.16 1.06.44s.44.656.44 1.06s-.16.78-.44 1.06"/><path d="m14.216 3.773l-1.27.714a6.2 6.2 0 0 0-1.166-.48l-.47-1.414a.5.5 0 0 0-.474-.343H9.06a.5.5 0 0 0-.481.365l-.392 1.403a6.2 6.2 0 0 0-1.164.486L5.69 3.835a.5.5 0 0 0-.578.094L3.855 5.185a.5.5 0 0 0-.082.599l.714 1.27q-.3.556-.48 1.166l-1.414.47a.5.5 0 0 0-.343.474v1.777a.5.5 0 0 0 .365.481l1.403.392q.184.608.486 1.164l-.669 1.333a.5.5 0 0 0 .094.578l1.256 1.256a.5.5 0 0 0 .599.082l1.27-.714q.556.3 1.166.48l.47 1.414a.5.5 0 0 0 .474.343h1.777a.5.5 0 0 0 .481-.365l.392-1.403a6.2 6.2 0 0 0 1.164-.486l1.333.669a.5.5 0 0 0 .578-.093l1.256-1.257a.5.5 0 0 0 .082-.599l-.714-1.27q.3-.556.48-1.166l1.414-.47a.5.5 0 0 0 .343-.474V9.06a.5.5 0 0 0-.365-.481l-1.403-.392a6.2 6.2 0 0 0-.486-1.164l.669-1.333a.5.5 0 0 0-.093-.578l-1.257-1.256a.5.5 0 0 0-.599-.082m-1.024 1.724l1.184-.667l.733.733l-.627 1.25a.5.5 0 0 0 .019.482c.265.44.464.918.59 1.418a.5.5 0 0 0 .35.36l1.309.366v1.037l-1.327.44a.5.5 0 0 0-.328.354a5.2 5.2 0 0 1-.585 1.42a.5.5 0 0 0-.007.502l.667 1.184l-.733.733l-1.25-.627a.5.5 0 0 0-.482.019c-.44.265-.918.464-1.418.59a.5.5 0 0 0-.36.35l-.366 1.309H9.525l-.44-1.327a.5.5 0 0 0-.355-.328a5.2 5.2 0 0 1-1.42-.585a.5.5 0 0 0-.502-.007l-1.184.667l-.733-.733l.627-1.25a.5.5 0 0 0-.019-.482a5.2 5.2 0 0 1-.59-1.418a.5.5 0 0 0-.35-.36l-1.309-.366V9.525l1.327-.44a.5.5 0 0 0 .327-.355c.125-.5.323-.979.586-1.42a.5.5 0 0 0 .007-.502L4.83 5.624l.733-.733l1.25.627a.5.5 0 0 0 .482-.019c.44-.265.918-.464 1.418-.59a.5.5 0 0 0 .36-.35l.366-1.309h1.037l.44 1.327a.5.5 0 0 0 .354.327c.5.125.979.323 1.42.586a.5.5 0 0 0 .502.007"/></g></svg><text x="510" y="210" font-family="Fraunces, serif" font-size="21" font-weight="600" fill="#262420" text-anchor="middle">Il lavoro e i mezzi.</text><text x="510" y="233" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="400" fill="#4b473e" text-anchor="middle">le mani del pasticcere, la sua</text><text x="510" y="256" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="400" fill="#4b473e" text-anchor="middle">competenza, il forno e l'impastatrice</text><path d="M674 316 L694 316" fill="none" stroke="#57534a" stroke-width="2" stroke-linecap="round" marker-end="url(#pen)"/><rect x="700" y="62" width="320" height="288" rx="14" fill="#f9efea" stroke="#AC6144" stroke-width="1.6"/><svg x="840" y="82" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20"><g fill="#AC6144"><path fill-rule="evenodd" d="M3 5h14a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1m14 12V6H3v11z" clip-rule="evenodd"/><path d="M9.5 5.5h1v12h-1z"/><path d="M2 10.5h16v1H2z"/><path fill-rule="evenodd" d="M8.943 1.554c1.125.978 1.787 3.001 1.035 3.866c-.75.864-2.374.27-3.659-.847c-1.094-.951-1.469-2.399-.712-3.269c.756-.87 2.242-.701 3.336.25M6.975 3.82c.897.779 2.033 1.194 2.249.945c.3-.344-.174-1.792-.937-2.455c-.725-.63-1.595-.73-1.926-.349c-.33.38-.11 1.229.614 1.859" clip-rule="evenodd"/><path fill-rule="evenodd" d="M11.298 1.554c-1.124.978-1.787 3.001-1.035 3.866c.75.864 2.374.27 3.66-.847c1.094-.951 1.469-2.399.712-3.269c-.756-.87-2.242-.701-3.337.25m1.969 2.265c-.897.779-2.033 1.194-2.249.945c-.3-.344.174-1.792.936-2.455c.725-.63 1.596-.73 1.926-.349c.33.38.111 1.229-.613 1.859" clip-rule="evenodd"/></g></svg><text x="860" y="154" font-family="Fraunces, serif" font-size="21" font-weight="600" fill="#262420" text-anchor="middle">Il prodotto finito.</text><text x="860" y="177" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="400" fill="#4b473e" text-anchor="middle">la torta, il croissant: per il cliente vale</text><text x="860" y="200" font-family="'Schibsted Grotesk', sans-serif" font-size="16" font-weight="400" fill="#4b473e" text-anchor="middle">molto di più</text><path d="M0 350 H1020" stroke="#D9DACF" stroke-width="1.5"/><path d="M160 166 V44" stroke="#D9DACF" stroke-width="1.5"/><path d="M860 54 V44" stroke="#D9DACF" stroke-width="1.5"/><path d="M166 44 L854 44" fill="none" stroke="#57534a" stroke-width="2" stroke-linecap="round" marker-end="url(#pen)"/><text x="510" y="32" font-family="'Schibsted Grotesk', sans-serif" font-size="13" font-weight="700" fill="#827F75" text-anchor="middle">IL VALORE CREATO DALL'AZIENDA</text><text x="0" y="378" font-family="'Schibsted Grotesk', sans-serif" font-size="14" font-weight="500" fill="#827F75" text-anchor="start">si parte da qui</text><text x="1020" y="378" font-family="'Schibsted Grotesk', sans-serif" font-size="14" font-weight="500" fill="#827F75" text-anchor="end">si arriva qui</text></svg></div>
@@ -691,8 +756,8 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
         </div>
         <div data-noprint="1" style="margin:26px 0 0;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;border-radius:8px;overflow:hidden;border:1px solid #D9DACF;">
-            <img src="assets/a02.jpg" alt="Un paio di scarpe da ginnastica: esempio di bene, materiale e tangibile" style="display:block;width:100%;height:100%;object-fit:cover;">
-            <img src="assets/a01.jpg" alt="Una lezione in aula: esempio di servizio, una prestazione immateriale" style="display:block;width:100%;height:100%;object-fit:cover;">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/a02.jpg" alt="Un paio di scarpe da ginnastica: esempio di bene, materiale e tangibile" style="display:block;width:100%;height:100%;object-fit:cover;">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/a01.jpg" alt="Una lezione in aula: esempio di servizio, una prestazione immateriale" style="display:block;width:100%;height:100%;object-fit:cover;">
           </div>
         </div>
       </section>
@@ -733,7 +798,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
         <div data-noprint="1" style="margin:26px 0 0;position:relative;">
           <div style="display:inline-flex;align-items:center;gap:8px;color:#827F75;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;"><i data-lucide="play-circle" class="lucide" style="font-size:16px;"></i>Guarda il video</div>
           <button onclick="{{ playVideo }}" style="{{ videoThumbStyle }}">
-            <img src="assets/a00.jpg" alt="Anteprima del video sui settori dell'attività economica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/a00.jpg" alt="Anteprima del video sui settori dell'attività economica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
             <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:54px;border-radius:14px;background:#E65900;display:flex;align-items:center;justify-content:center;">
               <span style="width:0;height:0;border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff;margin-left:4px;"></span>
             </span>
@@ -758,14 +823,14 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
             <div style="display:flex;align-items:center;gap:11px;margin-bottom:12px;"><span style="width:40px;height:40px;border-radius:11px;background:rgba(230,89,0,.14);color:#E65900;display:flex;align-items:center;justify-content:center;"><i data-lucide="trending-up" class="lucide" style="font-size:21px;"></i></span><span style="font-family:'Fraunces',serif;font-weight:600;font-size:19px;line-height:1.1;">Aziende profit oriented<br><span style="font-size:14px;color:#827F75;">(le imprese)</span></span></div>
             <p style="font-size:15px;line-height:1.62;margin:0;color:#3a3833;">Sono le aziende che hanno come obiettivo il <strong>profitto</strong>, cioè il guadagno. In economia aziendale prendono il nome di <strong>imprese</strong>. Il loro scopo è chiaro: vendere beni o servizi in modo da <strong>guadagnarci sopra</strong>, ottenendo più di quanto hanno speso. Rientrano qui le imprese che conosciamo ogni giorno: industriali (come Ferrero, Barilla, Lavazza), commerciali (come Esselunga, Coop, una catena di negozi) e di servizi (banche, compagnie aeree, ristoranti). La pasticceria, naturalmente, è un'impresa: il pasticcere lavora anche per vivere del proprio mestiere.</p>
             <div style="margin-top:auto;padding-top:16px;">
-              <img src="assets/a09.jpg" alt="Lo stabilimento Ferrero di Alba" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
+              <img loading="lazy" decoding="async" src="assets/a09.jpg" alt="Lo stabilimento Ferrero di Alba" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
             </div>
           </div>
           <div style="background:#fff;border:1px solid #D9DACF;border-top:4px solid #5C8B73;border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:11px;margin-bottom:12px;"><span style="width:40px;height:40px;border-radius:11px;background:rgba(154,195,171,.3);color:#3f6b52;display:flex;align-items:center;justify-content:center;"><i data-lucide="heart-handshake" class="lucide" style="font-size:21px;"></i></span><span style="font-family:'Fraunces',serif;font-weight:600;font-size:19px;line-height:1.1;">Aziende non profit</span></div>
             <p style="font-size:15px;line-height:1.62;margin:0;color:#3a3833;">Sono le aziende che <strong>non</strong> hanno come scopo principale il guadagno. Il loro fine è <strong>fornire servizi</strong> ai propri membri o all'intera collettività, con finalità sociali, culturali, sportive, religiose o di assistenza. Non cercano il profitto, ma hanno comunque bisogno di soldi per coprire i costi, e li ottengono soprattutto da <strong>contributi</strong>, <strong>donazioni</strong> e <strong>quote associative</strong>. Ne sono esempio organizzazioni come la Croce Rossa, la Caritas, le associazioni sportive e culturali. Fanno parte delle aziende non profit anche gli enti della <strong>Pubblica Amministrazione</strong> (scuole, ospedali, Comuni, INPS, ASL), che forniscono servizi pubblici fondamentali a tutti i cittadini.</p>
             <div style="margin-top:auto;padding-top:16px;">
-              <img src="assets/a16.jpg" alt="Volontari della Croce Rossa Italiana" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
+              <img loading="lazy" decoding="async" src="assets/a16.jpg" alt="Volontari della Croce Rossa Italiana" style="display:block;width:100%;height:auto;border-radius:8px;border:1px solid #D9DACF;">
             </div>
           </div>
         </div>
@@ -1004,10 +1069,10 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
         <p style="font-size:19px;line-height:1.74;margin:26px 0 0;">Ed ecco perché parliamo di <strong>ciclo</strong>: le quattro fasi non sono isolate, ma <strong>concatenate e continue</strong>. I ricavi della vendita finanziano i nuovi acquisti, che permettono nuova produzione, che porta nuove vendite. Finché questo cerchio gira bene, l'impresa vive e cresce.</p>
         <div data-noprint="1" style="margin:26px 0 0;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;border-radius:8px;overflow:hidden;border:1px solid #D9DACF;">
-            <img src="assets/a06.jpg" alt="Fase 1 - Finanziamenti: trovare i soldi per avviare l'attività" style="display:block;width:100%;height:100%;object-fit:cover;">
-            <img src="assets/a08.jpg" alt="Fase 2 - Investimenti: acquistare materie prime e mezzi" style="display:block;width:100%;height:100%;object-fit:cover;">
-            <img src="assets/a03.jpg" alt="Fase 3 - Produzione: trasformare le materie prime in prodotti" style="display:block;width:100%;height:100%;object-fit:cover;">
-            <img src="assets/a10.jpg" alt="Fase 4 - Disinvestimenti: vendere i prodotti e recuperare denaro" style="display:block;width:100%;height:100%;object-fit:cover;">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/a06.jpg" alt="Fase 1 - Finanziamenti: trovare i soldi per avviare l'attività" style="display:block;width:100%;height:100%;object-fit:cover;">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/a08.jpg" alt="Fase 2 - Investimenti: acquistare materie prime e mezzi" style="display:block;width:100%;height:100%;object-fit:cover;">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/a03.jpg" alt="Fase 3 - Produzione: trasformare le materie prime in prodotti" style="display:block;width:100%;height:100%;object-fit:cover;">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/a10.jpg" alt="Fase 4 - Disinvestimenti: vendere i prodotti e recuperare denaro" style="display:block;width:100%;height:100%;object-fit:cover;">
           </div>
         </div>
       </section>
@@ -1358,8 +1423,8 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
             </div>
 
             <div style="margin:6px 0 26px;display:grid;grid-template-columns:1fr 1fr;gap:4px;border:1px solid #D9DACF;border-radius:8px;overflow:hidden;">
-              <img src="assets/a12.jpg" alt="Panettoni industriali di marca impilati" style="display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;">
-              <img src="assets/a11.jpg" alt="Panettone artigianale con glassa al pistacchio" style="display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;">
+              <img data-lente="no" loading="lazy" decoding="async" src="assets/a12.jpg" alt="Panettoni industriali di marca impilati" style="display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;">
+              <img data-lente="no" loading="lazy" decoding="async" src="assets/a11.jpg" alt="Panettone artigianale con glassa al pistacchio" style="display:block;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;">
             </div>
 
             <h3 style="font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-.3px;margin:28px 0 12px;color:#57534A;">Il vantaggio dell'artigiano sta altrove</h3>
@@ -1402,7 +1467,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
             <p style="font-size:13px;font-style:italic;color:#9a8f84;margin:0 0 16px;">(Fonte: elaborazioni su dati ISTAT.)</p>
             <p style="font-size:18px;line-height:1.75;margin:0 0 16px;color:#33312c;">Tradotto: la vera spina dorsale dell'economia italiana non sono le multinazionali, ma le migliaia e migliaia di <strong>botteghe, laboratori e piccole aziende</strong> sparse nei territori. Esattamente il mondo in cui, con ogni probabilità, andrai a lavorare.</p>
 
-            <img src="assets/a07.jpg" alt="Interno di una pasticceria artigianale: la pasticcera decora un dolce al banco mentre una cliente osserva la vetrina" style="display:block;width:100%;height:auto;border:1px solid #D9DACF;border-radius:8px;margin:6px 0 26px;">
+            <img loading="lazy" decoding="async" src="assets/a07.jpg" alt="Interno di una pasticceria artigianale: la pasticcera decora un dolce al banco mentre una cliente osserva la vetrina" style="display:block;width:100%;height:auto;border:1px solid #D9DACF;border-radius:8px;margin:6px 0 26px;">
 
             <h3 style="font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-.3px;margin:28px 0 12px;color:#57534A;">Il dolce artigiano, in numeri</h3>
             <p style="font-size:18px;line-height:1.75;margin:0 0 6px;color:#33312c;">E il tuo mestiere, nel dettaglio? I numeri raccontano una <strong>fortissima vocazione artigiana</strong>. In Italia si contano oltre <strong>53.000 imprese</strong> tra pasticcerie e attività del settore dolciario, e di queste <strong>circa 37.000 sono artigiane</strong>: quasi <strong>sette su dieci</strong>. Il dolce italiano, insomma, è fatto <strong>soprattutto a mano</strong>, in tante piccole realtà legate al loro territorio.</p>
@@ -1687,7 +1752,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
   </main>
 
   <footer style="max-width:1180px;margin:0 auto;padding:30px 28px 56px;border-top:1px solid #D9DACF;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;text-align:left;">
-    <img src="assets/a04.png" alt="Logo Arte Bianca · IISS Cillario Ferrero · Neive" style="width:78px;height:78px;object-fit:contain;flex-shrink:0;">
+    <img data-lente="no" loading="lazy" decoding="async" src="assets/a04.png" alt="Logo Arte Bianca · IISS Cillario Ferrero · Neive" style="width:78px;height:78px;object-fit:contain;flex-shrink:0;">
     <div>
       <div style="font-family:'Fraunces',serif;font-weight:600;font-size:21px;line-height:1.08;letter-spacing:-.5px;color:#57534A;">IISS Cillario Ferrero</div>
       <div style="font-size:12.5px;color:#827F75;letter-spacing:.06em;text-transform:uppercase;margin-top:5px;">DTA · Arte Bianca · Classe Terza</div>
@@ -3415,7 +3480,7 @@ class Component extends DCLogic {
   justify-content:center;cursor:zoom-in;padding:0;z-index:3;}
 .zoomabile>.lente:hover{background:#EEF0EA;border-color:#C9C4B8;}
 .zoomabile>.lente svg{width:19px;height:19px;display:block;}
-#velografica{position:fixed;inset:0;background:rgba(38,36,32,.93);display:none;align-items:center;
+#velografica{position:fixed;inset:0;background:#262420;display:none;align-items:center;
   justify-content:center;z-index:1200;padding:34px 26px;}
 #velografica.on{display:flex;}
 #velografica .telaio{background:#F8F8F3;border:1px solid #D9DACF;border-radius:16px;
@@ -3440,9 +3505,11 @@ class Component extends DCLogic {
    Versione «gentile»: NON sposta nessun nodo (i moduli costruiti con React si romperebbero),
    marca il contenitore che c'e gia e ci appende il pulsante. */
 (function () {
-  var PIU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" '
-          + 'stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.6"/>'
-          + '<path d="M15.4 15.4 L21 21 M10.5 7.6 v5.8 M7.6 10.5 h5.8"/></svg>';
+  var PIU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+          + 'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+          + '<circle cx="10" cy="10" r="6.4"/>'
+          + '<path d="M14.9 14.9 L20.6 20.6"/>'
+          + '<path d="M10 6.9 v6.2 M6.9 10 h6.2"/></svg>';
   var velo, telaio;
 
   function costruisciVelo() {
@@ -3535,6 +3602,55 @@ class Component extends DCLogic {
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", avvia);
   else avvia();
+})();
+</script>
+
+<script>
+/* ============ IMPIANTO NUOVO 25/07/2026 - LA LENTINA SULLE FOTO ============
+   Regola di Mauro: il «+» va SOLO sulle foto che hanno definizione per essere
+   ingrandite (lato lungo >= 1400px). Le altre portano data-lente="no" e restano
+   senza pulsante e senza clic. Le mappe e le grafiche ce l'hanno sempre. */
+(function () {
+  var PIU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+          + 'stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6.4"/>'
+          + '<path d="M14.9 14.9 L20.6 20.6"/><path d="M10 6.9 v6.2 M6.9 10 h6.2"/></svg>';
+  var foto = [].slice.call(document.querySelectorAll('img')).filter(function (im) {
+    var s = im.getAttribute('src') || '';
+    if (s.indexOf('logo-arte-bianca') >= 0) return false;
+    return !im.closest('#velofoto') && !im.closest('#velografica') && !im.closest('.video-anteprima');
+  });
+  for (var i = 0; i < foto.length; i++) {
+    (function (img) {
+      if (img.getAttribute('data-lente') === 'no') { img.style.cursor = 'default'; return; }
+      var host = img.closest('.mos') || img.closest('.fotoblocco') || img.closest('.fotonuda');
+      if (!host) {
+        /* nessuna classe: avvolgo direttamente l'immagine, cosi' la lentina si
+           appoggia esattamente sopra di lei senza toccare i contenitori */
+        if (!img.parentNode) return;
+        host = document.createElement('span');
+        host.className = 'zoom-foto';
+        img.parentNode.insertBefore(host, img);
+        host.appendChild(img);
+      }
+      if (!host || !host.parentNode) return;
+      if (host.parentNode.classList && host.parentNode.classList.contains('zoomabile')) return;
+      var guscio = document.createElement('div');
+      guscio.className = 'zoomabile';
+      ['filo', 'sfonda', 'fotomedia', 'fotogrande'].forEach(function (c) {
+        if (host.classList.contains(c)) guscio.classList.add(c);
+      });
+      host.parentNode.insertBefore(guscio, host);
+      guscio.appendChild(host);
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'lente';
+      b.setAttribute('data-noprint', '1');
+      b.setAttribute('aria-label', 'Ingrandisci la foto');
+      b.setAttribute('title', 'Ingrandisci');
+      b.innerHTML = PIU;
+      b.addEventListener('click', function (ev) { ev.stopPropagation(); img.click(); });
+      guscio.appendChild(b);
+    })(foto[i]);
+  }
 })();
 </script>
 </body></html>
