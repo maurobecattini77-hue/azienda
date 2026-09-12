@@ -2826,10 +2826,7 @@ class Component extends DCLogic {
   docMaterials() {
     // Ogni voce: { label, filename, kind:'classe'|'quiz', resId, src }
     // I file veri si sostituiscono in assets/docente/ (stessi nomi) senza toccare qui.
-    return [
-      { label: 'Classe 4G (elenco alunni + PIN)', filename: 'classe-4G.json', kind: 'classe', resId: 'docClasse', src: 'assets/docente/classe-4G.json' },
-      { label: 'Verifica - Strumenti di pagamento', filename: 'verifica-strumenti-pagamento.json', kind: 'quiz', resId: 'docQuiz1', src: 'assets/docente/verifica-strumenti-pagamento.json' },
-    ];
+    return [];  // il cassetto parte vuoto: i file si caricano a mano dal proprio computer (niente dati degli alunni né verifiche dentro la pagina pubblica)
   }
 
   downloadText(filename, txt) {
