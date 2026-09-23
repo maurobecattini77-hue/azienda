@@ -2337,7 +2337,10 @@ class Component extends DCLogic {
           { t:`Dentro l'impresa le persone sono organizzate in una ~ (dirigenti, quadri, impiegati, operai); attorno all'impresa c'è invece una rete di ~, cioè i portatori di interesse.`, a:['gerarchia','stakeholder'] },
         ],
         mLeft: ['Cliente','Fornitore','Dipendente','Banca / finanziatore','Pubblica Amministrazione','Concorrente'],
-        mRight: [['a','Ricevere ordini continui e pagamenti puntuali'],['b','Qualità, prezzo giusto e un buon servizio'],['c','Il pagamento delle imposte e il rispetto delle norme'],['d','Un reddito e la sicurezza del posto di lavoro'],['e','Il rientro del prestito e il pagamento degli interessi'],['f','Conquistare gli stessi clienti dell\u2019impresa']],
+        mRight: [['a','«Pagami le fatture puntuali e continua a ordinare da me.»'],['b','«Voglio dolci buoni, a un prezzo giusto, e un servizio gentile.»'],['c','«Devi rispettare le norme igieniche e pagare le imposte.»'],['d','«Mi servono uno stipendio sicuro e un posto di lavoro stabile.»'],['e','«Ti ho prestato i soldi per il forno: rivoglio il prestito, con gli interessi.»'],['f','«Cerco di conquistare gli stessi clienti, con i miei prodotti.»']],
+        mTitle: 'Chi lo dice? Gli stakeholder della pasticceria',
+        mSub: 'Qui sotto ci sono sei frasi, dalla a alla f. Ognuna la direbbe uno stakeholder, cioè uno dei soggetti che hanno un interesse verso la pasticceria (card 12 e 13). Leggile, poi accanto a ogni stakeholder scegli la lettera della frase che direbbe lui.',
+        mLegendLabel: 'Le sei frasi', mRowsLabel: 'Gli stakeholder: chi dice che cosa?',
         mKey: ['b','a','d','e','c','f'],
       },
       C: { label: 'Blocco C', sub: 'L\u2019azienda in movimento',
@@ -2454,7 +2457,9 @@ class Component extends DCLogic {
     };
     const matchEx = (b) => {
       const R=D[b].mRight, L=D[b].mLeft, key=D[b].mKey;
+      const capo=(s)=>el('div',{style:{fontSize:'11px',fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'#827F75',margin:'0 0 8px'}}, s);
       const legend=el('div',{style:{display:'grid',gap:'7px',marginBottom:'14px',background:'#fff',border:'1px solid #E9E7DD',borderRadius:'12px',padding:'14px 16px'}},
+        D[b].mLegendLabel ? capo(D[b].mLegendLabel) : null,
         R.map((r)=>el('div',{key:r[0],style:{fontSize:'14px',lineHeight:1.5,color:'#3a3833'}}, el('strong',{style:{color:'#5a4a72'}}, r[0]+'.  '), r[1])));
       const rows=el('div',{style:{display:'grid',gap:'8px'}}, L.map((lft,i)=>{
         const k=b+'m'+i, cur=self.state.c1match[k], ans=key[i]; const st=(!cur)?'idle':(cur===ans?'ok':'no');
@@ -2464,7 +2469,7 @@ class Component extends DCLogic {
           el('select',{value:cur||'', onChange:(e)=>self.ansC1('c1match',k,e.target.value), style:selStyle(st,'row')},
             [el('option',{key:'_',value:''},'—')].concat(R.map((r)=>el('option',{key:r[0],value:r[0]}, r[0]))) ) );
       }));
-      return self.exCard('A','rgba(185,166,217,.3)','#7B66A4','Abbinamenti','Per ogni voce scegli la lettera giusta dalla legenda qui sopra.', el('div',{}, legend, rows, self.resultC1('match', b)));
+      return self.exCard('A','rgba(185,166,217,.3)','#7B66A4',D[b].mTitle||'Abbinamenti',D[b].mSub||'Per ogni voce scegli la lettera giusta dalla legenda qui sopra.', el('div',{}, legend, D[b].mRowsLabel ? capo(D[b].mRowsLabel) : null, rows, self.resultC1('match', b)));
     };
     const seg = el('div',{style:{display:'flex',flexWrap:'wrap',gap:'10px',alignItems:'center',marginBottom:'22px'}},
       el('div',{style:{display:'inline-flex',flexWrap:'wrap',gap:'4px',background:'#EEF0EA',border:'1px solid #D9DACF',borderRadius:'12px',padding:'4px'}},
