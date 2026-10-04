@@ -493,6 +493,7 @@
   @media (max-width: 860px) {
     main { padding-left: 16px !important; padding-right: 16px !important; }
     main section[data-screen-label] { padding: 28px 22px 84px !important; border-radius: 16px !important; }
+    main section#riassunto-video { padding: 28px 22px 30px !important; border-radius: 16px !important; }
     /* numero grande della card: rimpicciolito e riposizionato per non sovrapporsi */
     main section[data-screen-label] > div[style*="bottom: 34px"] { font-size: 44px !important; right: 18px !important; bottom: 16px !important; }
     /* griglie di contenuto a 2/3 colonne → 1 colonna */
@@ -507,6 +508,7 @@
   }
   @media (max-width: 520px) {
     main section[data-screen-label] { padding: 22px 16px 76px !important; }
+    main section#riassunto-video { padding: 22px 16px 22px !important; }
     main section[data-screen-label] > div[style*="bottom: 34px"] { font-size: 40px !important; right: 15px !important; bottom: 14px !important; }
     main h1 { font-size: 28px !important; }
     main section h2 { font-size: 24px !important; }
@@ -1154,6 +1156,20 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
         </div>
       </section>
 
+      <!-- ===== IL RIASSUNTO IN VIDEO (card senza numero e senza data-screen-label: resta fuori da Stampa e Word) ===== -->
+      <section id="riassunto-video" data-noprint="1" style="background:#F8F8F3;border:1px solid #D9DACF;border-top:3px solid #7B66A4;border-radius:18px;padding:40px 44px 44px;margin-bottom:30px;position:relative;overflow:hidden;isolation:isolate;">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(185,166,217,.3);color:#5a4a72;border-radius:999px;padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;position:relative;"><svg class="pep" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" style="display:block;flex-shrink:0;" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="m6 15.321l9.014-4.883L6 4.804zm9.49-4.003a1 1 0 0 0 .054-1.728L6.53 3.956A1 1 0 0 0 5 4.804v10.517a1 1 0 0 0 1.476.88z" clip-rule="evenodd"/></svg>Il riassunto in video</div>
+        <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1.08;letter-spacing:-.8px;margin:14px 0 18px;position:relative;">Tutto il modulo in poco più di tre minuti.</h2>
+        <p style="font-size:19px;line-height:1.74;margin:0 0 22px;">Un video per ripassare il modulo dall'inizio alla fine: la <strong>pasticceria sotto casa</strong> ti accompagna dalla definizione di azienda fino ai <strong>due equilibri</strong>. Guardalo dopo aver studiato le card, oppure prima della verifica.</p>
+        <div style="position:relative;max-width:880px;margin:0 auto;">
+          <button onclick="{{ playRiassunto }}" aria-label="Guarda il riassunto in video" style="{{ riaThumbStyle }}">
+            <img data-lente="no" loading="lazy" decoding="async" src="assets/riassunto-azienda-copertina.jpg" alt="La pasticceria sotto casa disegnata a mano: il riassunto in video del modulo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:7px;">
+            <svg aria-hidden="true" viewBox="0 0 78 54" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(48px,8.5vw,78px);height:auto;display:block;"><rect width="78" height="54" rx="14" fill="#E65900"/><path d="M32 16.5 L51.5 27 L32 37.5 Z" fill="#fff"/></svg>
+          </button>
+          <video id="video-riassunto" src="assets/riassunto-azienda.mp4" controls="controls" preload="none" playsinline="playsinline" style="{{ riaVideoStyle }}"></video>
+        </div>
+      </section>
+
     </div>
 
     <!-- ===================== SINTESI ===================== -->
@@ -1777,7 +1793,7 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
 </x-dc>
 <script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1100&quot;,&quot;height&quot;:&quot;800&quot;}}">
 class Component extends DCLogic {
-  state = { vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), tab: 'lezione', navOpen: false, docFiles: (function(){ try { return JSON.parse((typeof localStorage !== 'undefined' && localStorage.getItem('docFilesV1')) || '[]'); } catch (e) { return []; } })(), vf: {}, abb: {}, up: {}, em: {}, ord: [], videoOn: false, printAlign: 'left', printScope: 'lezione', c1blk: 'A', c1vf: {}, c1fill: {}, c1match: {}, c2blk: 'A', c2idx: 0, c2order: null, c2flip: false, c3blk: 1, c4u: false, c4pw: '', c4err: false, calcR: 20000, calcC: 16000, e1: {}, e1Checked: false, docPassInput: '', docUnlocked: false, docErr: false, qdocPassInput: '', qdocUnlocked: false, qdocErr: false };
+  state = { vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), tab: 'lezione', navOpen: false, docFiles: (function(){ try { return JSON.parse((typeof localStorage !== 'undefined' && localStorage.getItem('docFilesV1')) || '[]'); } catch (e) { return []; } })(), vf: {}, abb: {}, up: {}, em: {}, ord: [], videoOn: false, riaOn: false, printAlign: 'left', printScope: 'lezione', c1blk: 'A', c1vf: {}, c1fill: {}, c1match: {}, c2blk: 'A', c2idx: 0, c2order: null, c2flip: false, c3blk: 1, c4u: false, c4pw: '', c4err: false, calcR: 20000, calcC: 16000, e1: {}, e1Checked: false, docPassInput: '', docUnlocked: false, docErr: false, qdocPassInput: '', qdocUnlocked: false, qdocErr: false };
 
   componentDidMount() {
     this._icons(); this.buildPrintable(); this.seedDocFilesIfNeeded();
@@ -3665,6 +3681,9 @@ class Component extends DCLogic {
       videoSrc: this.state.videoOn ? 'https://www.youtube.com/embed/LelAIx4CUbY?autoplay=1&rel=0&playsinline=1' : '',
       playVideo: () => { if (location.protocol === 'file:') { window.open('https://www.youtube.com/watch?v=LelAIx4CUbY', '_blank', 'noopener'); } else { this.setState({ videoOn: true }); } },
       videoBtnLabel: (location.protocol === 'file:') ? 'Apri il video su YouTube' : 'Guarda il video qui',
+      riaThumbStyle: { display: this.state.riaOn ? 'none' : 'block', position: 'relative', width: '100%', padding: '0', aspectRatio: '16 / 9', border: '1px solid #D9DACF', cursor: 'pointer', borderRadius: '8px', overflow: 'hidden', background: '#fff' },
+      riaVideoStyle: { display: this.state.riaOn ? 'block' : 'none', width: '100%', aspectRatio: '16 / 9', border: '1px solid #D9DACF', borderRadius: '8px', background: '#fff' },
+      playRiassunto: () => { this.setState({ riaOn: true }, () => { const v = document.getElementById('video-riassunto'); if (v) { const pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } }); },
       doPrint: () => this.doPrint(),
       doWord: () => this.doWord(),
       alignJustify: () => this.setState({ printAlign: 'justify' }, () => this.buildPrintable()),
