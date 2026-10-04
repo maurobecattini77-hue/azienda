@@ -490,6 +490,8 @@
     @page { margin: 18mm 16mm; }
   }
   /* ===== Responsive (mobile) ===== */
+  #riassunto-video .ria-anteprima:hover .ria-play, #riassunto-video .ria-anteprima:focus-visible .ria-play { transform: translate(-50%,-50%) scale(1.07) !important; background: rgba(38,36,32,.88) !important; }
+  #riassunto-video .ria-anteprima:focus-visible { outline: 2px solid #7B66A4; outline-offset: 3px; }
   @media (max-width: 860px) {
     main { padding-left: 16px !important; padding-right: 16px !important; }
     main section[data-screen-label] { padding: 28px 22px 84px !important; border-radius: 16px !important; }
@@ -1162,9 +1164,19 @@ svg.mappa { max-width:1020px; margin-left:auto; margin-right:auto; }
         <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1.08;letter-spacing:-.8px;margin:14px 0 18px;position:relative;">Tutto il modulo in poco più di tre minuti.</h2>
         <p style="font-size:19px;line-height:1.74;margin:0 0 22px;">Un video per ripassare il modulo dall'inizio alla fine: la <strong>pasticceria sotto casa</strong> ti accompagna dalla definizione di azienda fino ai <strong>due equilibri</strong>. Guardalo dopo aver studiato le card, oppure prima della verifica.</p>
         <div style="position:relative;max-width:880px;margin:0 auto;">
-          <button onclick="{{ playRiassunto }}" aria-label="Guarda il riassunto in video" style="{{ riaThumbStyle }}">
+          <button onclick="{{ playRiassunto }}" aria-label="Guarda il riassunto in video" class="ria-anteprima" style="{{ riaThumbStyle }}">
             <img data-lente="no" loading="lazy" decoding="async" src="assets/riassunto-azienda-copertina.jpg" alt="La pasticceria sotto casa disegnata a mano: il riassunto in video del modulo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:7px;">
-            <svg aria-hidden="true" viewBox="0 0 78 54" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(48px,8.5vw,78px);height:auto;display:block;"><rect width="78" height="54" rx="14" fill="#E65900"/><path d="M32 16.5 L51.5 27 L32 37.5 Z" fill="#fff"/></svg>
+            <span style="position:absolute;inset:0;border-radius:7px;background:linear-gradient(180deg,rgba(38,36,32,0) 76%,rgba(38,36,32,.58) 100%);"></span>
+            <span class="ria-play" style="position:absolute;top:50%;left:50%;width:clamp(54px,8vw,80px);height:clamp(54px,8vw,80px);transform:translate(-50%,-50%);border-radius:50%;background:rgba(38,36,32,.74);border:1.5px solid rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;transition:transform .18s ease,background .18s ease;">
+              <svg aria-hidden="true" viewBox="0 0 24 24" style="width:40%;height:40%;margin-left:9%;display:block;"><path d="M7 4.8 L19 12 L7 19.2 Z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <span style="position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:clamp(8px,1.4vw,14px);padding:clamp(8px,1.4vw,14px) clamp(10px,1.8vw,18px);color:#fff;">
+              <svg aria-hidden="true" viewBox="0 0 24 24" style="width:clamp(12px,1.5vw,16px);height:auto;display:block;flex-shrink:0;"><path d="M7 4.8 L19 12 L7 19.2 Z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <span style="flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.38);"></span>
+              <span style="font-family:'Schibsted Grotesk',sans-serif;font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.02em;font-variant-numeric:tabular-nums;">3:24</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:clamp(14px,1.6vw,18px);height:auto;display:block;flex-shrink:0;"><path d="M11 5 L6 9 H3 V15 H6 L11 19 Z"/><path d="M15.5 8.5 a5 5 0 0 1 0 7"/></svg>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:clamp(14px,1.6vw,18px);height:auto;display:block;flex-shrink:0;"><path d="M4 9 V4 H9 M15 4 H20 V9 M20 15 V20 H15 M9 20 H4 V15"/></svg>
+            </span>
           </button>
           <video id="video-riassunto" src="assets/riassunto-azienda.mp4" controls="controls" preload="none" playsinline="playsinline" style="{{ riaVideoStyle }}"></video>
         </div>
