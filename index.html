@@ -4001,4 +4001,35 @@ class Component extends DCLogic {
   else avvia();
 })();
 </script>
+<script data-kit="schermo-intero-video">
+/* 16/11/2026, schermo-intero-video: l'icona dello schermo intero disegnata in fondo a destra dell'anteprima di un video
+   apre davvero il video a schermo intero (prima faceva solo partire il video nel riquadro piccolo). Conta anche un po' di
+   spazio attorno all'icona, per il dito sulla LIM. Il clic sul resto dell'anteprima resta com'era. Attrezzo
+   schermo_intero_video.py nella skill «modulo». */
+(function () {
+  var st = document.createElement('style');
+  st.textContent = 'video:fullscreen{border:0 !important;border-radius:0 !important;background:#000 !important;}';
+  document.head.appendChild(st);
+  var scelta = null;
+  document.addEventListener('click', function (ev) {
+    scelta = null;
+    var a = ev.target && ev.target.closest ? ev.target.closest('.ria-anteprima') : null;
+    var p = a ? a.querySelector('path[d^="M4 9 V4 H9"]') : null;
+    if (!p || !ev.clientX) return;
+    var r = p.closest('svg').getBoundingClientRect();
+    if (ev.clientX >= r.left - 18 && ev.clientX <= r.right + 18 && ev.clientY >= r.top - 18 && ev.clientY <= r.bottom + 18) scelta = a;
+  }, true);
+  document.addEventListener('click', function () {
+    var a = scelta, v = a && a.parentNode ? a.parentNode.querySelector('video') : null;
+    scelta = null;
+    if (!v) return;
+    if (v.style.display === 'none') v.style.display = 'block';
+    try {
+      if (v.requestFullscreen) { var q = v.requestFullscreen(); if (q && q.catch) q.catch(function () {}); }
+      else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    } catch (e) {}
+  });
+})();
+</script>
 </body></html>
